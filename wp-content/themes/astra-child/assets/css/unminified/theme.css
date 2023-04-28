@@ -1,0 +1,40 @@
+
+
+.section-title-home {
+  border-bottom-left-radius: 30% 5%;
+  border-bottom-right-radius: 30% 5%;
+  transform: skewY(0deg);
+  overflow: hidden;
+}
+
+/*le site en full width*/
+.ast-container {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.entry-content[ast-blocks-layout] > * {
+  max-width: 100%;
+}
+/*supprimer l'espacement entre hedaer et content*/
+.ast-plain-container.ast-no-sidebar #primary {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.site-content {
+  margin-top: -25px;
+  margin-bottom: 0;
+}
+/*cacher le titre des pages en frontend*/
+.entry-title {
+  display: none;
+}
+
+/*nav*/
+nav li:last-child {
+  background-color: var(--rose-fonce-bt);
+  padding: 8px;
+  color: white;
+}

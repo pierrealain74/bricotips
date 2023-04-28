@@ -1,0 +1,100 @@
+{
+    "version": 2,
+    "settings": {
+      "color": {
+        "palette": [
+          {
+            "name": "Planty Green",
+            "slug": "planty-green",
+            "color": "#3b8e46"
+          },
+          {
+            "name": "Planty Pink  Text",
+            "slug": "planty-pink-text",
+            "color": "#d2776a"
+          },
+          {
+            "name": "Planty Pink Light Button",
+            "slug": "planty-pink-light-bt",
+            "color": "#e0b9b4"
+          },
+         {
+            "name": "Planty Pink Dark Button",
+            "slug": "planty-pink-dark-bt",
+            "color": "#dc9f96"
+          },
+          {
+            "name": "Planty Pink Bg",
+            "slug": "planty-pink-bg",
+            "color": "#ece2da "
+          }     
+         
+         
+        ]
+      },
+      "appearanceTools": true,
+      "spacing": {
+        "blockGap": true,
+        "margin": true,
+        "padding": true,
+        "units": ["%","px","em","rem","vh","vw"]
+        },
+      "typography": {
+        "customFontSize": true,
+        "customLineHeight": true,
+        "dropCap": true,
+        "fontSizes": [
+        {
+            "size": "38px",
+            "name": "H1",
+            "slug": "H1"
+        },
+        {
+            "size": "30px",
+            "name": "H2",
+            "slug": "H2"
+        },
+        {
+            "size": "0",
+            "name": "||",
+            "slug": "||"
+        },
+        {
+            "size": "13px",
+            "name": "Small",
+            "slug": "small"
+          },
+          {
+            "size": "20px",
+            "name": "Medium",
+            "slug": "medium"
+          },
+          {
+            "size": "36px",
+            "name": "Large",
+            "slug": "large"
+          },
+          {
+            "size": "42px",
+            "name": "Extra Large",
+            "slug": "x-large"
+          }
+        ]
+      },
+      "layout": {
+        "contentSize": "var(--wp--custom--ast-content-width-size)",
+        "wideSize": "var(--wp--custom--ast-wide-width-size)",
+        "fullSize": "none"
+      }
+    },
+    "styles": {
+      "elements": {
+        "link": {
+            "typography": {
+              "textDecoration": "none"
+            }
+        }
+      }
+    }
+  }
+  
