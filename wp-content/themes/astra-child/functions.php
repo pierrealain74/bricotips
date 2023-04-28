@@ -12,7 +12,7 @@ function astrachild_enqueue_styles()
     // Chargement du style.css du thème parent Twenty Twenty
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     // Chargement du css/unminified/theme.css du child theme
-    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/assets/css/unminified/theme.css', array(), '1.0');
+    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/theme.css', array(), '1.0');
 }
 
 //ajout theme.json du theme enfant -- NE FONCTIONNE PAS
