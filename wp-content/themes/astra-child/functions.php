@@ -11,30 +11,49 @@ function astrachild_enqueue_styles()
 {
     // Chargement du style.css du thème parent Twenty Twenty
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
-    // Chargement du css/unminified/theme.css du child theme
-    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/theme.css', array(), '1.0');
+
+    // Chargement du theme.css du child theme
+    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/theme.css', array('parent-style'), filemtime(get_stylesheet_directory() . '/theme.css'));
+
+    // Chargement du banniere-titre.css pour shortcode banniere titre
+ /*    wp_enqueue_style('banniere-titre-shortcode', get_stylesheet_directory_uri() . '/assets/css/shortcodes/banniere_titre.css', array(), '1.0'); */
+
+    wp_enqueue_style('banniere-titre-shortcode', get_stylesheet_directory_uri() . '/assets/css/shortcodes/banniere_titre.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/shortcodes/banniere_titre.css'));
+
+
+   
+
 }
 
-//ajout theme.json du theme enfant -- NE FONCTIONNE PAS
-/* add_action( 'after_setup_theme', 'montheme_add_theme_support' );
-function montheme_add_theme_support() {
-    add_theme_support( 'editor-color-palette' );
+// Ajoute un shortcode 'banniere-titre'
+add_shortcode('banniere-titre', 'banniere_titre_func');
 
-    $theme_json = get_theme_file_path( 'theme.json' );
+// Je génère le html retourné par mon shortcode
+function banniere_titre_func($atts)
+{
+    //Je récupère les attributs mis sur le shortcode
+    $atts = shortcode_atts(array(
+        'src' => '',
+        'titre' => 'Titre'
+    ), $atts, 'banniere-titre');
 
-    if ( file_exists( $theme_json ) ) {
-        $theme_json_data = json_decode( file_get_contents( $theme_json ), true );
-        if ( isset( $theme_json_data['settings']['colors']['palette-planty'] ) && is_array( $theme_json_data['settings']['colors']['palette-planty'] ) ) {
-            $colors = array();
-            foreach ( $theme_json_data['settings']['colors']['palette-planty'] as $color ) {
-                $colors[] = array(
-                    'name'  => $color['name'],
-                    'slug'  => $color['slug'],
-                    'color' => $color['color'],
-                );
-            }
-            add_theme_support( 'editor-color-palette', $colors );
-        }
+    //Je commence à récupéré le flux d'information
+    ob_start();
+
+    if ($atts['src'] != "") {
+        ?>
+
+        <div class="banniere" style="background-image: url(<?= $atts['src'] ?>)">
+            <h2 class="titre-banniere"><?= $atts['titre'] ?></h2>
+        </div>
+
+        <?php
     }
+
+    //J'arrête de récupérer le flux d'information et le stock dans la fonction $output
+    $output = ob_get_contents();
+    ob_end_clean();
+
+    return $output;
 }
- */
+?>

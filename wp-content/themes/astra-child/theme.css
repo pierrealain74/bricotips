@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;800&display=swap");
 
 html, *{
-  font-family: "syne", sans-serif;
+  font-family: 'Syne', sans-serif;
 }
 .section-title-home {
   border-bottom-left-radius: 30% 5%;
@@ -128,4 +128,13 @@ nav li:last-child a{
 .site-primary-footer-wrap[data-section="section-primary-footer-builder"] .ast-builder-grid-row {
   padding-left: 0;
   padding-right: 0;
+}
+/* La classe 'hover-effect' permettra de créer un effet de zoom quand l'on passera la souris par dessus les elements images enfants  */
+.bouton-commander{
+  transition: all 0.33s ease-in-out;
+  transform: scale(1) translateY(0px);
+}
+.bouton-commander:hover {
+  transition: all 0.33s ease-in-out;
+  transform: scale(1.05) translateY(-10px);
 }
